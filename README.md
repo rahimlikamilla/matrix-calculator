@@ -3,7 +3,7 @@
 
 Matrix Calculator is a simple GUI application created using C# and Windows Forms.
 
-## Controls
+## Usage
 
 Firstly, choose one of the following operations :
 - Addition
