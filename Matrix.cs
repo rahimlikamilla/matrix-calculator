@@ -11,6 +11,7 @@ class Matrix {
 
     public (int, int) dim => (m.GetLength(0), m.GetLength(1));
 
+
     public double this[int i, int j] {
         get { return m[i, j]; }
         set { m[i, j] = value; }
@@ -66,6 +67,7 @@ class Matrix {
         return d != 0;
     }
 
+    
     public double[,] formAugmentedM(double[,] a) {
         int d = dim.Item1;
         double[,] agmt = new double[d, 2 * d];
@@ -97,7 +99,7 @@ class Matrix {
     }
 
 
-    // swap rows, so that largest leftmost non-zero entry is on top
+    // Swap rows, so that largest leftmost non-zero entry is on top
     int nonzeroOnTop(ref double[,] a, int pivot = 0, int col = 0) {
         int exchange_with = pivot;
         (int rows, int cols) = dim;
@@ -119,7 +121,7 @@ class Matrix {
     }
 
 
-    // finding RREF
+    // Finding RREF
     void findRREF(ref double[,] a, bool inverse = false) {
         int rows = a.GetLength(0);
         int cols = a.GetLength(1);
@@ -176,7 +178,6 @@ class Matrix {
     #nullable disable
 
 
-    // this method is not complete
     public Matrix SolveSystems() {
         findRREF(ref m);
         return new Matrix(m);
